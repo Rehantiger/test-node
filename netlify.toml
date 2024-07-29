@@ -1,0 +1,24 @@
+[build]
+  # Path to your build directory (adjust if necessary)
+  publish = "public"
+  
+  # Command to run your build script (adjust if necessary)
+  command = "npm run build"
+
+[dev]
+  # Path to your local server (for development purposes)
+  command = "npm run dev"
+
+[[redirects]]
+  # Redirect all routes to your serverless function
+  from = "/*"
+  to = "/server.js"
+  status = 200
+  force = true
+
+[[redirects]]
+  # This ensures that /server.js serves your Express app
+  from = "/server.js"
+  to = "/server.js"
+  status = 200
+  force = true
